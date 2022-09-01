@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Results from "./Results";
 
 const RoutesSection = () => {
@@ -7,14 +7,11 @@ const RoutesSection = () => {
     <div className="p-4">
       <Routes>
         <Route exact path="/" element={<Navigate to="/search" />} />
-        <Route
-          exact
-          path={["/search", "/images", "/news", "/videos"]}
-          element={<Results />}
-        />
+        <Route path="/search" element={<Results />} />
+        <Route path="/images" element={<Results />} />
+        <Route path="/news" element={<Results />} />
+        <Route path="/videos" element={<Results />} />
       </Routes>
-
-      <h1>Routes</h1>
     </div>
   );
 };
