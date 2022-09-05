@@ -8,7 +8,7 @@ const RoutesSection = () => {
       <Routes>
         <Route exact path="/" element={<Navigate to="/search" />} />
         <Route path="/search" element={<Results />} />
-        <Route path="/images" element={<Results />} />
+        <Route path="/image" element={<Results />} />
         <Route path="/news" element={<Results />} />
         <Route path="/videos" element={<Results />} />
       </Routes>
