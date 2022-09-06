@@ -6,7 +6,7 @@ const baseUrl = "https://google-search3.p.rapidapi.com/api/v1";
 export const ResultContextProvider = ({ children }) => {
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("Imran Khan");
+  const [searchTerm, setSearchTerm] = useState("");
 
   // /videos, /search, /images
   const getResults = async (type) => {
@@ -16,13 +16,12 @@ export const ResultContextProvider = ({ children }) => {
       method: "GET",
       headers: {
         "X-User-Agent": "desktop",
-        "X-RapidAPI-Key": "9511630625mshc9e6f0a5aaf06cdp19e8bajsnbf9118d8bb46",
+        "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
         "X-RapidAPI-Host": "google-search3.p.rapidapi.com",
       },
     });
 
     const data = await response.json();
-    console.log(data);
 
     if (type.includes("/news")) {
       setResults(data.entries);
