@@ -9,7 +9,7 @@ const Results = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (searchTerm) {
+    if (searchTerm !== '') {
       if (location.pathname === "/videos") {
         getResults(`/search/q=${searchTerm} videos`);
       } else {
