@@ -58,8 +58,8 @@ const Results = () => {
     case "/news":
       return (
         <div className="flex flex-wrap justify-between space-y-6 sm:px-56 item-center">
-          {results?.map(({ links, id, source, title }) => (
-            <div key={id} className="md:w-2/5 w-full">
+          {results?.map(({ links, source, title }, index) => (
+            <div key={index} className="md:w-2/5 w-full">
               <a
                 href={links?.[0].href}
                 target="_blank"
@@ -92,7 +92,8 @@ const Results = () => {
             <div key={index} className="p-2">
               {video?.additional_links?.[0]?.href && (
                 <ReactPlayer
-                  url={video.additional_links?.[0].href}
+                  url={video?.additional_links?.[0].href}
+                  
                   controls
                   width="355px"
                   height="200px"

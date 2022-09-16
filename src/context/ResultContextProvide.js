@@ -20,15 +20,18 @@ export const ResultContextProvider = ({ children }) => {
         "X-RapidAPI-Host": "google-search3.p.rapidapi.com",
       },
     });
-
+    console.log(`API : ${baseUrl}${type}`)
     const data = await response.json();
 
     if (type.includes("/news")) {
       setResults(data.entries);
+      console.log("NEWS",data);
     } else if (type.includes("/image")) {
       setResults(data.image_results);
+      console.log("IMAGES",data);
     } else {
       setResults(data.results);
+      console.log("SEARCH / VIDEOS",data);
     }
 
     setIsLoading(false);

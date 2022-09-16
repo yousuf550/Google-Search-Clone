@@ -8,9 +8,9 @@ const RoutesSection = () => {
       <Routes>
         <Route exact path="/" element={<Navigate to="/search" />} />
         <Route exact path="/search" element={<Results />} />
-        <Route path="/image" element={<Results />} />
-        <Route path="/news" element={<Results />} />
-        <Route path="/videos" element={<Results />} />
+        <Route exact path="/image" element={<Results />} />
+        <Route exact path="/news" element={<Results />} />
+        <Route exact path="/videos" element={<Results />} />
       </Routes>
     </div>
   );
